@@ -1,0 +1,33 @@
+{
+  "name": "depher",
+  "version": "0.0.0",
+  "description": "Extract designated parameter and default to a given value if undefined.",
+  "main": "depher.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "extract",
+    "designated",
+    "element",
+    "default",
+    "depher"
+  ],
+  "homepage": "https://github.com/volkovasystems/depher",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "arid": "^0.2.0",
+    "falzy": "^0.3.0",
+    "harden": "^0.6.0",
+    "protype": "^0.2.0",
+    "pyck": "^0.0.0",
+    "zelf": "^0.2.0"
+  }
+}
