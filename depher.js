@@ -48,6 +48,7 @@
 	@include:
 		{
 			"arid": "arid",
+			"doubt": "doubt",
 			"falzy": "falzy",
 			"harden": "harden",
 			"protype": "protype",
@@ -58,6 +59,7 @@
 */
 
 const arid = require( "arid" );
+const doubt = require( "doubt" );
 const falzy = require( "falzy" );
 const harden = require( "harden" );
 const protype = require( "protype" );
@@ -94,7 +96,8 @@ const depher = function depher( list, condition, defer ){
 	}
 
 	let conditionType = protype( condition );
-	if( ( !conditionType.STRING &&
+	if( ( !doubt( condition ).ARRAY &&
+			!conditionType.STRING &&
 			!conditionType.FUNCTION ) ||
 
 		( conditionType.STRING &&
