@@ -49,9 +49,9 @@
 		{
 			"arid": "arid",
 			"doubt": "doubt",
+			"falze": "falze",
 			"falzy": "falzy",
 			"harden": "harden",
-			"protype": "protype",
 			"pyck": "pyck",
 			"zelf": "zelf"
 		}
@@ -60,9 +60,9 @@
 
 const arid = require( "arid" );
 const doubt = require( "doubt" );
+const falze = require( "falze" );
 const falzy = require( "falzy" );
 const harden = require( "harden" );
-const protype = require( "protype" );
 const pyck = require( "pyck" );
 const zelf = require( "zelf" );
 
@@ -84,32 +84,27 @@ const depher = function depher( list, condition, defer ){
 				],
 				"condition:required": [
 					"string",
-					"function"
+					"function",
+					BOOLEAN,
+					FUNCTION,
+					NUMBER,
+					OBJECT,
+					STRING,
+					UNDEFINED,
+					SYMBOL,
+					"[string, function]"
 				],
-				"defer": "*"
+				"defer:required": "*"
 			}
 		@end-meta-configuration
 	*/
 
-	if( falzy( defer ) ){
-		throw new Error( "defer value not give" );
+	if( falze( condition ) ){
+		throw new Error( "invalid condition" );
 	}
 
-	let conditionType = protype( condition );
-	if( ( !doubt( condition ).ARRAY &&
-			!conditionType.STRING &&
-			!conditionType.FUNCTION ) ||
-
-		( conditionType.STRING &&
-			condition != BOOLEAN &&
-			condition != FUNCTION &&
-			condition != NUMBER &&
-			condition != OBJECT &&
-			condition != STRING &&
-			condition != UNDEFINED &&
-			condition != SYMBOL ) )
-	{
-		throw new Error( "invalid condition" );
+	if( falzy( defer ) ){
+		throw new Error( "defer value not give" );
 	}
 
 	let self = zelf( this );
