@@ -1,5 +1,3 @@
-"use strict";
-
 /*;
 	@module-license:
 		The MIT License (MIT)
@@ -47,23 +45,21 @@
 
 	@include:
 		{
-			"arid": "arid",
+			"dephall": "dephall",
 			"doubt": "doubt",
 			"falze": "falze",
 			"falzy": "falzy",
 			"harden": "harden",
-			"pyck": "pyck",
 			"zelf": "zelf"
 		}
 	@end-include
 */
 
-const arid = require( "arid" );
+const dephall = require( "dephall" );
 const doubt = require( "doubt" );
 const falze = require( "falze" );
 const falzy = require( "falzy" );
 const harden = require( "harden" );
-const pyck = require( "pyck" );
 const zelf = require( "zelf" );
 
 harden( "BOOLEAN", "boolean" );
@@ -99,23 +95,27 @@ const depher = function depher( list, condition, defer ){
 		@end-meta-configuration
 	*/
 
+	if( !doubt( list, AS_ARRAY ) ){
+		throw new Error( "invalid list" );
+	}
+
 	if( falze( condition ) ){
 		throw new Error( "invalid condition" );
 	}
 
 	if( falzy( defer ) ){
-		throw new Error( "defer value not give" );
+		throw new Error( "defer value not given" );
 	}
 
 	let self = zelf( this );
 
-	let result = pyck.bind( self )( list, condition );
+	let result = dephall.bind( self )( list, condition, defer );
 
-	if( arid( result ) ){
-		return defer;
+	if( doubt( result, ARRAY ) ){
+		return result[ 0 ];
 
 	}else{
-		return result[ 0 ];
+		return result;
 	}
 };
 
