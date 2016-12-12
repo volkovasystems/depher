@@ -1,6 +1,6 @@
 {
   "name": "depher",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Extract designated parameter and default to a given value if undefined.",
   "main": "depher.js",
   "scripts": {
@@ -18,13 +18,16 @@
     "depher"
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "contributors": [
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/volkovasystems/depher/issues"
   },
   "homepage": "https://github.com/volkovasystems/depher#readme",
   "dependencies": {
-    "dephall": "^0.3.0",
+    "dephall": "^0.4.0",
     "doubt": "^0.4.0",
     "falze": "^0.2.0",
     "falzy": "^0.5.0",
