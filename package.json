@@ -1,10 +1,13 @@
 {
   "name": "depher",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Extract designated parameter and default to a given value if undefined.",
   "main": "depher.js",
+  "support": "depher.support.js",
+  "deploy": "depher.deploy.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel depher.js -o depher.support.js && webpack",
+    "test": "mocha depher-test.js"
   },
   "repository": {
     "type": "git",
@@ -27,11 +30,20 @@
   },
   "homepage": "https://github.com/volkovasystems/depher#readme",
   "dependencies": {
-    "dephall": "^0.4.0",
-    "doubt": "^0.4.0",
-    "falze": "^0.2.0",
-    "falzy": "^0.5.0",
-    "harden": "^0.9.0",
-    "zelf": "^0.3.0"
+    "babel-runtime": "^6.20.0",
+    "dephall": "^0.5.0",
+    "doubt": "^0.6.0",
+    "falze": "^0.3.0",
+    "falzy": "^0.7.0",
+    "harden": "^0.12.0",
+    "zelf": "^0.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-latest": "^6.16.0",
+    "source-map-loader": "^0.1.5",
+    "webpack": "^1.14.0"
   }
 }
