@@ -22,4 +22,5 @@ falze \
 falzy \
 harden \
 zelf \
---save
+--save \
+--force-latest

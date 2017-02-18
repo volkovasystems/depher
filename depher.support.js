@@ -108,10 +108,6 @@ var depher = function depher(list, condition, defer) {
 		throw new Error("invalid condition");
 	}
 
-	if (falzy(defer)) {
-		throw new Error("defer value not given");
-	}
-
 	var self = zelf(this);
 
 	var result = dephall.bind(self)(list, condition, defer);
