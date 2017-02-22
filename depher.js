@@ -51,8 +51,8 @@
 			"dephall": "dephall",
 			"doubt": "doubt",
 			"falze": "falze",
-			"falzy": "falzy",
 			"harden": "harden",
+			"raze": "raze",
 			"zelf": "zelf"
 		}
 	@end-include
@@ -61,8 +61,8 @@
 const dephall = require( "dephall" );
 const doubt = require( "doubt" );
 const falze = require( "falze" );
-const falzy = require( "falzy" );
 const harden = require( "harden" );
+const raze = require( "raze" );
 const zelf = require( "zelf" );
 
 harden( "BOOLEAN", "boolean" );
@@ -93,7 +93,10 @@ const depher = function depher( list, condition, defer ){
 					SYMBOL,
 					"[string, function]"
 				],
-				"defer:required": "*"
+				"defer:required": [
+					"*",
+					"..."
+				]
 			}
 		@end-meta-configuration
 	*/
@@ -106,9 +109,7 @@ const depher = function depher( list, condition, defer ){
 		throw new Error( "invalid condition" );
 	}
 
-	let self = zelf( this );
-
-	let result = dephall.bind( self )( list, condition, defer );
+	let result = dephall.apply( zelf( this ), raze( arguments ) );
 
 	if( doubt( result, ARRAY ) ){
 		return result[ 0 ];

@@ -3,8 +3,8 @@ babel-runtime \
 dephall \
 doubt \
 falze \
-falzy \
 harden \
+raze \
 zelf \
 --save && \
 yarn add \
@@ -19,8 +19,8 @@ bower install \
 dephall \
 doubt \
 falze \
-falzy \
 harden \
+raze \
 zelf \
 --save \
 --force-latest
