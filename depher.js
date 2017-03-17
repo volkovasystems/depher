@@ -44,6 +44,8 @@
 
 	@module-documentation:
 		Extract designated parameter and default to a given value if undefined.
+
+		This will return a single element.
 	@end-module-documentation
 
 	@include:
@@ -109,14 +111,7 @@ const depher = function depher( list, condition, defer ){
 		throw new Error( "invalid condition" );
 	}
 
-	let result = dephall.apply( zelf( this ), raze( arguments ) );
-
-	if( doubt( result, ARRAY ) ){
-		return result[ 0 ];
-
-	}else{
-		return result;
-	}
+	return dephall.apply( zelf( this ), raze( arguments ) )[ 0 ];
 };
 
 module.exports = depher;
