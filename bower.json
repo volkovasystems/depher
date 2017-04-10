@@ -1,6 +1,6 @@
 {
   "name": "depher",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "description": "Extract designated parameter and default to a given value if undefined.",
   "main": "depher.deploy.js",
   "support": "depher.support.js",
@@ -25,7 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "dephall": "^0.22.0",
+    "dephall": "^0.23.0",
     "doubt": "^0.24.0",
     "falze": "^0.20.0",
     "harden": "^0.21.0",
