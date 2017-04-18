@@ -53,7 +53,6 @@
 			"dephall": "dephall",
 			"doubt": "doubt",
 			"falze": "falze",
-			"harden": "harden",
 			"raze": "raze",
 			"zelf": "zelf"
 		}
@@ -63,17 +62,8 @@
 const dephall = require( "dephall" );
 const doubt = require( "doubt" );
 const falze = require( "falze" );
-const harden = require( "harden" );
 const raze = require( "raze" );
 const zelf = require( "zelf" );
-
-harden( "BOOLEAN", "boolean" );
-harden( "FUNCTION", "function" );
-harden( "NUMBER", "number" );
-harden( "OBJECT", "object" );
-harden( "STRING", "string" );
-harden( "UNDEFINED", "undefined" );
-harden( "SYMBOL", "symbol" );
 
 const depher = function depher( list, condition, defer ){
 	/*;
