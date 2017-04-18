@@ -3,7 +3,6 @@ babel-runtime \
 dephall \
 doubt \
 falze \
-harden \
 raze \
 zelf \
 --save && \
@@ -19,7 +18,6 @@ bower install \
 dephall \
 doubt \
 falze \
-harden \
 raze \
 zelf \
 --save \
