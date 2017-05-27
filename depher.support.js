@@ -52,7 +52,6 @@
               		{
               			"dephall": "dephall",
               			"doubt": "doubt",
-              			"falze": "falze",
               			"raze": "raze",
               			"zelf": "zelf"
               		}
@@ -61,7 +60,6 @@
 
 var dephall = require("dephall");
 var doubt = require("doubt");
-var falze = require("falze");
 var raze = require("raze");
 var zelf = require("zelf");
 
@@ -97,8 +95,8 @@ var depher = function depher(list, condition, defer) {
 		throw new Error("invalid list");
 	}
 
-	if (falze(condition)) {
-		throw new Error("invalid condition");
+	if (arguments.length < 3) {
+		throw new Error("invalid parameter");
 	}
 
 	return dephall.apply(zelf(this), raze(arguments))[0];
