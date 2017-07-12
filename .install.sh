@@ -1,7 +1,6 @@
 yarn add \
 babel-runtime \
 dephall \
-doubt \
 raze \
 zelf \
 --save && \
@@ -15,7 +14,6 @@ webpack \
 --dev && \
 bower install \
 dephall \
-doubt \
 raze \
 zelf \
 --save \

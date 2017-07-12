@@ -1,6 +1,6 @@
 {
   "name": "depher",
-  "version": "0.36.0",
+  "version": "0.37.0",
   "description": "Extract designated parameter and default to a given value if undefined.",
   "main": "depher.js",
   "support": "depher.support.js",
@@ -34,7 +34,6 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "dephall": "^0.35.0",
-    "doubt": "^0.30.0",
     "raze": "^0.33.0",
     "zelf": "^0.12.0"
   },
@@ -44,6 +43,6 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "source-map-loader": "^0.2.1",
-    "webpack": "^3.1.0"
+    "webpack": "^3.2.0"
   }
 }
