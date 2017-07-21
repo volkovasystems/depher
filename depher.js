@@ -52,7 +52,6 @@
 	@include:
 		{
 			"dephall": "dephall",
-			"doubt": "doubt",
 			"raze": "raze",
 			"zelf": "zelf"
 		}
@@ -60,7 +59,6 @@
 */
 
 const dephall = require( "dephall" );
-const doubt = require( "doubt" );
 const raze = require( "raze" );
 const zelf = require( "zelf" );
 
@@ -91,10 +89,6 @@ const depher = function depher( list, condition, defer ){
 			}
 		@end-meta-configuration
 	*/
-
-	if( !doubt( list, AS_ARRAY ) ){
-		throw new Error( "invalid list" );
-	}
 
 	if( arguments.length < 3 ){
 		throw new Error( "invalid parameter" );
