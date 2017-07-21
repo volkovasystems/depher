@@ -1,48 +1,48 @@
 {
-  "name": "depher",
-  "version": "0.37.0",
-  "description": "Extract designated parameter and default to a given value if undefined.",
-  "main": "depher.js",
-  "support": "depher.support.js",
-  "deploy": "depher.deploy.js",
-  "browser": "depher.deploy.js",
-  "scripts": {
-    "build": "babel depher.js --out-file depher.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha depher-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/depher.git"
-  },
-  "keywords": [
-    "extract",
-    "designated",
-    "element",
-    "default",
-    "depher"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/depher/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/depher#readme",
-  "dependencies": {
-    "babel-runtime": "^6.23.0",
-    "dephall": "^0.35.0",
-    "raze": "^0.33.0",
-    "zelf": "^0.12.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^3.2.0"
-  }
+	"name": "depher",
+	"version": "0.37.0",
+	"description": "Extract designated parameter and default to a given value if undefined.",
+	"main": "depher.js",
+	"support": "depher.support.js",
+	"deploy": "depher.deploy.js",
+	"browser": "depher.deploy.js",
+	"scripts": {
+		"build": "babel depher.js --out-file depher.support.js --source-maps && webpack --progress --display-modules",
+		"test": "mocha depher-test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/depher.git"
+	},
+	"keywords": [
+		"extract",
+		"designated",
+		"element",
+		"default",
+		"depher"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/depher/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/depher#readme",
+	"dependencies": {
+		"babel-runtime": "^6.23.0",
+		"dephall": "^0.36.0",
+		"raze": "^0.34.0",
+		"zelf": "^0.13.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-latest": "^6.24.1",
+		"source-map-loader": "^0.2.1",
+		"webpack": "^3.3.0"
+	}
 }
