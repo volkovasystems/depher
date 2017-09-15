@@ -1,44 +1,26 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>depher unit test</title>
+		<meta charset="utf-8">
 
-		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+		<title>test:depher</title>
 
-		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-
-		<script type="application/javascript" src="./depher.deploy.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css"/>
 	</head>
 
 	<body>
-		<div id="qunit"></div>
+		<div id="mocha"></div>
 
-		<div id="qunit-fixture"></div>
+		<script type="application/javascript" src="https://unpkg.com/mocha/mocha.js"></script>
 
 		<script type="application/javascript">
-			QUnit.test( "depher unit test", function( assert ) {
+			mocha.setup( "bdd" );
+		</script>
 
-				assert.equal( depher( [ 1, 2, 3 ], NUMBER, false ), 1, "should be equal to 1" );
+		<script type="application/javascript" src="./test.deploy.js"></script>
 
-				assert.equal( depher( [ "", "hello", "world", "1" ], NUMBER, 123 ), 123, "should be equal to 123" );
-
-				assert.equal( depher( [ 1, 2, 3 ], STRING, null, "hello" ), "hello", "should be equal to 'hello'" );
-
-				assert.deepEqual( depher( [ [ 1, 2, 3 ] ], Array, "", 123, "yeah", [ 1, 2, 3 ] ),
-					[ 1, 2, 3 ], "should be equal to [ 1, 2, 3 ]" );
-
-				assert.deepEqual( depher( [ "hello" ], Array, "", 123, "yeah", [ 1, 2, 3 ] ),
-					[ 1, 2, 3 ], "should be equal to [ 1, 2, 3 ]" );
-
-				( function test( ){
-					assert.deepEqual( depher( arguments, OBJECT, { } ), { }, "should be equal to empty object" );
-				} )( 1, 2, 3, 4 );
-
-				( function test( ){
-					assert.deepEqual( depher( arguments, OBJECT, { } ), { "hello": "world" }, "should be equal to { 'hello': 'world' }" );
-				} )( 1, 2, 3, 4, { "hello": "world" } );
-
-			} );
+		<script type="application/javascript">
+			mocha.run( );
 		</script>
 	</body>
 </html>
