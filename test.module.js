@@ -104,6 +104,7 @@ describe( "depher", ( ) => {
 			( function test( ){
 				assert.deepEqual( depher( arguments, OBJECT, { } ), { "hello": "world" } );
 			} )( 1, 2, 3, 4, { "hello": "world" } );
+
 		} );
 	} );
 
@@ -149,6 +150,7 @@ describe( "depher", ( ) => {
 			( function test( ){
 				assert.deepEqual( depher( arguments, OBJECT, { } ), { "hello": "world" } );
 			} )( 1, 2, 3, 4, { "hello": "world" } );
+
 		} );
 	} );
 
@@ -157,5 +159,105 @@ describe( "depher", ( ) => {
 
 
 //: @bridge:
+describe( "depher", ( ) => {
 
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`depher( [ 1, 2, 3 ], NUMBER, false )`", ( ) => {
+		it( "should be equal to 1", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return depher( [ 1, 2, 3 ], NUMBER, false );
+				}
+
+			).value;
+
+			assert.equal( result, 1 );
+
+		} );
+	} );
+
+	describe( "`depher( [ '', 'hello', 'world', '1' ], NUMBER, 123 )`", ( ) => {
+		it( "should be equal to 123", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return depher( [ "", "hello", "world", "1" ], NUMBER, 123 );
+				}
+
+			).value;
+
+			assert.equal( result, 123 );
+
+		} );
+	} );
+
+	describe( "`depher( [ 1, 2, 3 ], STRING, null, 'hello' )`", ( ) => {
+		it( "should be equal to 'hello'", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return depher( [ 1, 2, 3 ], STRING, null, "hello" );
+				}
+
+			).value;
+
+			assert.equal( result, "hello" );
+
+		} );
+	} );
+
+	describe( "`depher( [ [ 1, 2, 3 ] ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( depher( [ [ 1, 2, 3 ] ], Array, "", 123, "yeah", [ 1, 2, 3 ] ) );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.deepEqual( JSON.parse( result ), [ 1, 2, 3 ] );
+
+		} );
+	} );
+
+	describe( "`depher( [ 'hello' ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( depher( [ "hello" ], Array, "", 123, "yeah", [ 1, 2, 3 ] ) );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.deepEqual( JSON.parse( result ), [ 1, 2, 3 ] );
+
+		} );
+	} );
+
+	describe( "`depher( arguments, OBJECT, { } )`", ( ) => {
+		it( "should be equal to { 'hello': 'world' }", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( depher( [ 1, 2, 3, 4, { "hello": "world" } ], OBJECT, { } ) );
+				}
+
+			).value;
+			//: @end-ignore
+
+			assert.deepEqual( JSON.parse( result ), { "hello": "world" } );
+
+		} );
+	} );
+
+} );
 //: @end-bridge
