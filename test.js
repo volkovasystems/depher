@@ -45,13 +45,13 @@
 
 	@include:
 		{
-			"assert": "should",
+			"assert": "should/as-function",
 			"depher": "depher"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const assert = require( "should/as-function" );
 
 //: @server:
 const depher = require( "./depher.js" );
@@ -63,11 +63,48 @@ const depher = require( "./depher.js" );
 
 
 //: @server:
-
 describe( "depher", ( ) => {
 
-} );
+	describe( "`depher( [ 1, 2, 3 ], NUMBER, false )`", ( ) => {
+		it( "should be equal to 1", ( ) => {
+			assert.equal( depher( [ 1, 2, 3 ], NUMBER, false ), 1 );
+		} );
+	} );
 
+	describe( "`depher( [ '', 'hello', 'world', '1' ], NUMBER, 123 )`", ( ) => {
+		it( "should be equal to 123", ( ) => {
+			assert.equal( depher( [ "", "hello", "world", "1" ], NUMBER, 123 ), 123 );
+		} );
+	} );
+
+	describe( "`depher( [ 1, 2, 3 ], STRING, null, 'hello' )`", ( ) => {
+		it( "should be equal to 'hello'", ( ) => {
+			assert.equal( depher( [ 1, 2, 3 ], STRING, null, "hello" ), "hello" );
+		} );
+	} );
+
+	describe( "`depher( [ [ 1, 2, 3 ] ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
+			assert.deepEqual( depher( [ [ 1, 2, 3 ] ], Array, "", 123, "yeah", [ 1, 2, 3 ] ), [ 1, 2, 3 ] );
+		} );
+	} );
+
+	describe( "`depher( [ 'hello' ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 3 ]", ( ) => {
+			assert.deepEqual( depher( [ "hello" ], Array, "", 123, "yeah", [ 1, 2, 3 ] ), [ 1, 2, 3 ] );
+		} );
+	} );
+
+	describe( "`depher( arguments, OBJECT, { } )`", ( ) => {
+		it( "should be equal to { 'hello': 'world' }", ( ) => {
+			( function test( ){
+				assert.deepEqual( depher( arguments, OBJECT, { } ), { "hello": "world" } );
+			} )( 1, 2, 3, 4, { "hello": "world" } );
+
+		} );
+	} );
+
+} );
 //: @end-server
 
 

@@ -1,16 +1,102 @@
 {
-  "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-09-15T16:06:05.734Z",
-    "end": "2017-09-15T16:06:05.734Z",
-    "duration": 0
-  },
-  "tests": [],
-  "pending": [],
-  "failures": [],
-  "passes": []
+	"stats": {
+		"suites": 7,
+		"tests": 6,
+		"passes": 6,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-09-18T03:53:43.499Z",
+		"end": "2017-09-18T03:53:43.515Z",
+		"duration": 16
+	},
+	"tests": [
+		{
+			"title": "should be equal to 1",
+			"fullTitle": "depher `depher( [ 1, 2, 3 ], NUMBER, false )` should be equal to 1",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 123",
+			"fullTitle": "depher `depher( [ '', 'hello', 'world', '1' ], NUMBER, 123 )` should be equal to 123",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 'hello'",
+			"fullTitle": "depher `depher( [ 1, 2, 3 ], STRING, null, 'hello' )` should be equal to 'hello'",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 1, 2, 3 ]",
+			"fullTitle": "depher `depher( [ [ 1, 2, 3 ] ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )` should be equal to [ 1, 2, 3 ]",
+			"duration": 4,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 1, 2, 3 ]",
+			"fullTitle": "depher `depher( [ 'hello' ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )` should be equal to [ 1, 2, 3 ]",
+			"duration": 4,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to { 'hello': 'world' }",
+			"fullTitle": "depher `depher( arguments, OBJECT, { } )` should be equal to { 'hello': 'world' }",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should be equal to 1",
+			"fullTitle": "depher `depher( [ 1, 2, 3 ], NUMBER, false )` should be equal to 1",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 123",
+			"fullTitle": "depher `depher( [ '', 'hello', 'world', '1' ], NUMBER, 123 )` should be equal to 123",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to 'hello'",
+			"fullTitle": "depher `depher( [ 1, 2, 3 ], STRING, null, 'hello' )` should be equal to 'hello'",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 1, 2, 3 ]",
+			"fullTitle": "depher `depher( [ [ 1, 2, 3 ] ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )` should be equal to [ 1, 2, 3 ]",
+			"duration": 4,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 1, 2, 3 ]",
+			"fullTitle": "depher `depher( [ 'hello' ], Array, '', 123, 'yeah', [ 1, 2, 3 ] )` should be equal to [ 1, 2, 3 ]",
+			"duration": 4,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to { 'hello': 'world' }",
+			"fullTitle": "depher `depher( arguments, OBJECT, { } )` should be equal to { 'hello': 'world' }",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }
